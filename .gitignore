@@ -11,4 +11,3 @@ plugins/*
 *DB*
 *.db*
 /target
-/lib
