@@ -11,3 +11,4 @@ plugins/*
 *DB*
 *.db*
 /target
+/*DataSource.groovy
