@@ -11,4 +11,4 @@ plugins/*
 *DB*
 *.db*
 /target
-DataSource.groovy
+/grails-app/conf/DataSource.groovy
