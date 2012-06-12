@@ -1,7 +1,7 @@
 dataSource {
     pooled = true
-    driverClassName = "org.h2.Driver"
-    username = "sa"
+    driverClassName = "org.postgresql.Driver"
+    username = "postgres"
     password = ""
 }
 hibernate {
@@ -26,7 +26,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE"
+            url = "jdbc:postgresql:ideasydiseno"
             pooled = true
             properties {
                maxActive = -1
