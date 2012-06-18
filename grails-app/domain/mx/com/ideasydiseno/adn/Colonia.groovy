@@ -11,6 +11,6 @@ class Colonia {
     }
 
     String toString(){
-        return "${nombreCompleto}"
+        return "${nombreCompleto}, ${municipio}"
     }
 }

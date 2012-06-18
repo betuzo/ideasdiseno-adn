@@ -34,52 +34,52 @@
 	<g:select name="sexo" from="${clienteInstance.constraints.sexo.inList}" required="" value="${clienteInstance?.sexo}" valueMessagePrefix="cliente.sexo"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'fechaNacimiento', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'fechaNacimiento', 'error')} ">
 	<label for="fechaNacimiento">
 		<g:message code="cliente.fechaNacimiento.label" default="Fecha Nacimiento" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="fechaNacimiento" precision="day"  value="${clienteInstance?.fechaNacimiento}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'direccion', 'error')} required">
-	<label for="direccion">
-		<g:message code="cliente.direccion.label" default="Direccion" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="direccion" required="" value="${clienteInstance?.direccion}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'colonia', 'error')} required">
-	<label for="colonia">
-		<g:message code="cliente.colonia.label" default="Colonia" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="colonia" name="colonia.id" from="${mx.com.ideasydiseno.adn.Colonia.list()}" optionKey="id" required="" value="${clienteInstance?.colonia?.id}" class="many-to-one"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'codigoPostal', 'error')} required">
-	<label for="codigoPostal">
-		<g:message code="cliente.codigoPostal.label" default="Codigo Postal" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="codigoPostal" required="" value="${clienteInstance?.codigoPostal}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'telefono', 'error')} ">
-	<label for="telefono">
-		<g:message code="cliente.telefono.label" default="Telefono" />
 		
 	</label>
-	<g:textField name="telefono" value="${clienteInstance?.telefono}"/>
+	<g:datePicker name="fechaNacimiento" precision="day"  value="${clienteInstance?.fechaNacimiento}" default="none" noSelection="['': '']" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'email', 'error')} required">
-	<label for="email">
-		<g:message code="cliente.email.label" default="Email" />
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'direccion', 'error')} ">
+	<label for="direccion">
+		<g:message code="cliente.direccion.label" default="Direccion" />
+		
+	</label>
+	<g:textField name="direccion" value="${clienteInstance?.direccion}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'colonia', 'error')} ">
+	<label for="colonia">
+		<g:message code="cliente.colonia.label" default="Colonia" />
+		
+	</label>
+	<g:select id="colonia" name="colonia.id" from="${mx.com.ideasydiseno.adn.Colonia.list()}" optionKey="id" value="${clienteInstance?.colonia?.id}" class="many-to-one" noSelection="['null': '']"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'codigoPostal', 'error')} ">
+	<label for="codigoPostal">
+		<g:message code="cliente.codigoPostal.label" default="Codigo Postal" />
+		
+	</label>
+	<g:textField name="codigoPostal" value="${clienteInstance?.codigoPostal}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'telefono', 'error')} required">
+	<label for="telefono">
+		<g:message code="cliente.telefono.label" default="Telefono" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="email" name="email" required="" value="${clienteInstance?.email}"/>
+	<g:textField name="telefono" required="" value="${clienteInstance?.telefono}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'email', 'error')} ">
+	<label for="email">
+		<g:message code="cliente.email.label" default="Email" />
+		
+	</label>
+	<g:field type="email" name="email" value="${clienteInstance?.email}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'compras', 'error')} ">

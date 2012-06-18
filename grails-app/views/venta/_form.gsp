@@ -1,6 +1,13 @@
 <%@ page import="mx.com.ideasydiseno.adn.Venta" %>
 
-
+<g:if test="${ventaInstance?.id}">
+<li class="fieldcontain">
+	<span id="id-label" class="property-label"><g:message code="venta.id.label" default="Folio" /></span>
+	
+		<span class="property-value" aria-labelledby="id-label"><g:fieldValue bean="${ventaInstance}" field="id"/></span>
+	
+</li>
+</g:if>
 
 <div class="fieldcontain ${hasErrors(bean: ventaInstance, field: 'cliente', 'error')} required">
 	<label for="cliente">

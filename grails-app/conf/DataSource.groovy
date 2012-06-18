@@ -1,7 +1,13 @@
-dataSource {
+/*dataSource {
     pooled = true
     driverClassName = "org.postgresql.Driver"
     username = "postgres"
+    password = ""
+}*/
+dataSource {
+    pooled = true
+    driverClassName = "org.h2.Driver"
+    username = "sa"
     password = ""
 }
 hibernate {

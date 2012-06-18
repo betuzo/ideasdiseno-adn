@@ -15,6 +15,6 @@ class Municipio {
     }
 
     String toString(){
-        return "${nombreCorto}"
+        return "${nombreCorto}, ${estado}"
     }
 }
