@@ -15,18 +15,18 @@
 		margin: 60px auto;
 		text-align: left;
 		border: 1px solid #aab;
-		background-color: #f0f0fa;
-		-moz-box-shadow: 2px 2px 2px #eee;
-		-webkit-box-shadow: 2px 2px 2px #eee;
-		-khtml-box-shadow: 2px 2px 2px #eee;
-		box-shadow: 2px 2px 2px #eee;
+		background-color: #faf0f0;
+		-moz-box-shadow: 2px 2px 2px #ee0000;
+		-webkit-box-shadow: 2px 2px 2px #ee0000;
+		-khtml-box-shadow: 2px 2px 2px #ee0000;
+		box-shadow: 2px 2px 2px #ee0000;
 	}
 
 	#login .inner .fheader {
 		padding: 18px 26px 14px 26px;
-		background-color: #f7f7ff;
+		background-color: #fff7f7;
 		margin: 0px 0 14px 0;
-		color: #2e3741;
+		color: #412e2e;
 		font-size: 18px;
 		font-weight: bold;
 	}
@@ -71,7 +71,7 @@
 
 	#login .inner .login_message {
 		padding: 6px 25px 20px 25px;
-		color: #c33;
+		color: #330000;
 	}
 
 	#login .inner .text_ {

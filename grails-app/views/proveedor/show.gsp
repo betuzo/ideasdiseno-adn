@@ -95,11 +95,13 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${proveedorInstance?.contacto}">
+				<g:if test="${proveedorInstance?.contactos}">
 				<li class="fieldcontain">
-					<span id="contacto-label" class="property-label"><g:message code="proveedor.contacto.label" default="Contacto" /></span>
+					<span id="contactos-label" class="property-label"><g:message code="proveedor.contactos.label" default="Contactos" /></span>
 					
-						<span class="property-value" aria-labelledby="contacto-label"><g:link controller="contactoProveedor" action="show" id="${proveedorInstance?.contacto?.id}">${proveedorInstance?.contacto?.encodeAsHTML()}</g:link></span>
+						<g:each in="${proveedorInstance.contactos}" var="c">
+						<span class="property-value" aria-labelledby="contactos-label"><g:link controller="contactoProveedor" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

@@ -25,45 +25,36 @@
 		<nav id="nav">
 			<ul id="navigation">
 				<li><g:link class="first" controller='venta' action='create'>Venta</g:link></li>
-				<li><a href="#">Services &raquo;</a>
+				<li><a href="#">Compras &raquo;</a>
 					<ul>
-						<li><a href="#">Web Development</a></li>
-						<li><a href="#">Logo Design</a></li>
-						<li><a href="#">Identity & Branding &raquo;</a>
-							<ul>
-								<li><a href="#">Business Cards</a></li>
-								<li><a href="#">Brochures</a></li>
-								<li><a href="#">Envelopes</a></li>
-								<li><a href="#">Flyers</a></li>
-							</ul>					
-						</li>					
-						<li><a href="#">Wordpress</a></li>
+						<li><g:link controller='proveedor'>Proveedor</g:link></li>
+						<li><g:link controller='productoProveedor'>Precios Proveedor</g:link></li>
+						<li><g:link controller='entrada'>Gasto</g:link></li>
 					</ul>
 				</li>
-				<li><a href="#">Portfolio &raquo;</a>
+				<li><a href="#">Admin Ventas &raquo;</a>
 					<ul>
-						<li><a href="#">Graphic Design</a></li>
-						<li><a href="#">Photography</a></li>
-						<li><a href="#">Architecture</a></li>
-						<li><a href="#">Calligraphy</a></li>
-						<li><a href="#">Film &raquo;</a>
-							<ul>
-								<li><a href="#">John Carter</a></li>
-								<li><a href="#">The Avengers</a></li>
-								<li><a href="#">The Amazing SpiderMan</a></li>
-								<li><a href="#">Madagascar 3</a></li>
-							</ul>						
-						</li>
-						<li><a href="#">Graffity </a></li>
+						<li><g:link controller='cliente'>Cliente</g:link></li>
+						<li><g:link controller='producto'>Productos</g:link></li>
 					</ul>				
 				</li>
-				<li><a href="#">Testimonials</a></li>
-				<li><a href="#">Blog</a></li>
+				<li><a href="#">Admin General &raquo;</a>
+					<ul>
+						<li><g:link controller='pais'>Pais</g:link></li>
+						<li><g:link controller='estado'>Estado</g:link></li>
+						<li><g:link controller='municipio'>Municipio</g:link></li>
+						<li><g:link controller='colonia'>Colonia</g:link></li>
+						<li><g:link controller='usuario'>Usuario</g:link></li>
+						<li><g:link controller='rol'>Rol</g:link></li>
+						<li><g:link controller='requestmap'>Config Seguridad</g:link></li>
+						<li><g:link controller='usuarioRol'>Asig Seguridad</g:link></li>
+					</ul>				
+				</li>
 				<sec:ifLoggedIn>
-					<li><g:link class="last" controller='logout' action='auth'>Salir</g:link></li>
+				<li><g:link class="last" controller='logout' action='auth'>Salir</g:link></li>
 				</sec:ifLoggedIn>
 				<sec:ifNotLoggedIn>
-					<li><g:link class="last" controller='login' action='auth'>Entrar</g:link></li>
+				<li><g:link class="last" controller='login' action='auth'>Entrar</g:link></li>
 				</sec:ifNotLoggedIn>
 			</ul>
 		</nav>

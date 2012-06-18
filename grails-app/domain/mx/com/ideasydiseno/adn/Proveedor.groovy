@@ -11,9 +11,8 @@ class Proveedor {
 	String telefono1
 	String telefono2
 	String paginaWeb
-	ContactoProveedor contacto
 
-	static hasMany = [productos: ProductoProveedor]
+	static hasMany = [productos: ProductoProveedor, contactos: ContactoProveedor]
 
     static constraints = {
     	nombre blank:false
@@ -24,7 +23,6 @@ class Proveedor {
         codigoPostal blank:false
     	telefono1 nullable:true
     	telefono2 nullable:true
-    	contacto nullable:true
     }
 
     String toString(){

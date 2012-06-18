@@ -80,7 +80,7 @@
 			<h1>Bienvenido a Ideas y Diseño</h1>
 			<p>Sistema integral de Ideas y Diseño, ¡todo en orden, todo en su lugar!</p>
 
-			<img src="${resource(dir: 'images', file: 'presentacion.jpg')}" alt="Ideas y Diseño" width="100%" height="100%"/>
+			<img src="${resource(dir: 'images', file: 'presentacion.jpg')}" alt="Ideas y Diseño" width="100%" height="120%"/>
 		</div>
 	</body>
 </html>

@@ -66,12 +66,21 @@
 	<g:textField name="telefono2" value="${proveedorInstance?.telefono2}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'contacto', 'error')} ">
-	<label for="contacto">
-		<g:message code="proveedor.contacto.label" default="Contacto" />
+<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'contactos', 'error')} ">
+	<label for="contactos">
+		<g:message code="proveedor.contactos.label" default="Contactos" />
 		
 	</label>
-	<g:select id="contacto" name="contacto.id" from="${mx.com.ideasydiseno.adn.ContactoProveedor.list()}" optionKey="id" value="${proveedorInstance?.contacto?.id}" class="many-to-one" noSelection="['null': '']"/>
+	
+<ul class="one-to-many">
+<g:each in="${proveedorInstance?.contactos?}" var="c">
+    <li><g:link controller="contactoProveedor" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="contactoProveedor" action="create" params="['proveedor.id': proveedorInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'contactoProveedor.label', default: 'ContactoProveedor')])}</g:link>
+</li>
+</ul>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'paginaWeb', 'error')} ">
