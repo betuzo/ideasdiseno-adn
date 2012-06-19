@@ -33,7 +33,7 @@ html * {
 }
 
 body {
-	background: #ffffff;
+	background: #f6f6f5;
 	color: #333333;
 	margin: 0 auto;
 	max-width: 960px;
@@ -44,7 +44,7 @@ body {
 }
 
 #grailsLogo {
-	background-color: #fff;
+	background-color: #f6f6f5;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -85,9 +85,27 @@ img {
 
 /* GENERAL */
 
-#grailsLogo a {
-	display: inline-block;
-	margin: 1em;
+#containerTable {
+	display: table;
+	width: 100%;
+}
+
+#rowTable  {
+	display: table-row;
+}
+
+#leftTable {
+	display: table-cell;
+	padding-bottom: 0px;
+	padding-top: 15px;
+	padding-left: 40px;
+	padding-right: 5px;
+	width: 40%;
+}
+
+#rightTable {
+	display: table-cell;
+	width: 60%;
 }
 
 .content {
@@ -132,9 +150,9 @@ img {
 /* NAVIGATION MENU */
 
 .nav {
-	background-color: #efefef;
+	background-color: #d40707;
 	padding: 0.5em 0.75em;
-	margin-top:40px;
+	margin-top:0px;
 	   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
 	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
 	        box-shadow: 0 0 3px 1px #aaaaaa;
@@ -156,7 +174,7 @@ img {
 }
 
 .nav a {
-	color: #666666;
+	color: #fff;
 	display: block;
 	padding: 0.25em 0.7em;
 	text-decoration: none;
@@ -166,11 +184,11 @@ img {
 }
 
 .nav a:active, .nav a:visited {
-	color: #666666;
+	color: #fff;
 }
 
 .nav a:focus, .nav a:hover {
-	background-color: #999999;
+	background-color: #7d0000;
 	color: #ffffff;
 	outline: none;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
@@ -178,7 +196,7 @@ img {
 
 .no-borderradius .nav a:focus, .no-borderradius .nav a:hover {
 	background-color: transparent;
-	color: #444444;
+	color: #fff;
 	text-decoration: underline;
 }
 
@@ -593,12 +611,14 @@ a.skip {
 	width:620px;
 	margin:0 auto;
 	margin-top:1px;
+	float: right;
 }
 
 #nav {
 	position:relative;
 	width:620px;
 	margin:0 auto;
+	float: right;
 }
 
 ul#navigation {

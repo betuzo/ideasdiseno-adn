@@ -18,50 +18,54 @@
         <r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://www.ideasydiseno.com.mx/"><img src="${resource(dir: 'images', file: 'ideasydiseno_logo.png')}" alt="Grails" width="200" height="150" /></a></div>
+		<div id="containerTable">
+  			<div id="row"Table>
+    			<div id="leftTable"><div id="grailsLogo" role="banner"><a href="http://www.ideasydiseno.com.mx/"><img src="${resource(dir: 'images', file: 'ideasydiseno_logo.png')}" alt="Grails" width="200" height="150" /></a></div>
+    			</div>
+    			<div id="rightTable">
+    				<div id="wrapper">
+					<nav id="nav">
+						<ul id="navigation">
+							<li><g:link class="first" controller='venta' action='create'>Venta</g:link></li>
+							<li><a href="#">Compras &raquo;</a>
+								<ul>
+									<li><g:link controller='proveedor'>Proveedor</g:link></li>
+									<li><g:link controller='productoProveedor'>Precios Proveedor</g:link></li>
+									<li><g:link controller='entrada'>Gasto</g:link></li>
+								</ul>
+							</li>
+							<li><a href="#">Admin Ventas &raquo;</a>
+								<ul>
+									<li><g:link controller='cliente'>Cliente</g:link></li>
+									<li><g:link controller='producto'>Productos</g:link></li>
+								</ul>				
+							</li>
+							<li><a href="#">Admin General &raquo;</a>
+								<ul>
+									<li><g:link controller='pais'>Pais</g:link></li>
+									<li><g:link controller='estado'>Estado</g:link></li>
+									<li><g:link controller='municipio'>Municipio</g:link></li>
+									<li><g:link controller='colonia'>Colonia</g:link></li>
+									<li><g:link controller='usuario'>Usuario</g:link></li>
+									<li><g:link controller='rol'>Rol</g:link></li>
+									<li><g:link controller='requestmap'>Config Seguridad</g:link></li>
+									<li><g:link controller='usuarioRol'>Asig Seguridad</g:link></li>
+								</ul>				
+							</li>
+							<sec:ifLoggedIn>
+							<li><g:link class="last" controller='logout'>Salir</g:link></li>
+							</sec:ifLoggedIn>
+							<sec:ifNotLoggedIn>
+							<li><g:link class="last" controller='login' action='auth'>Entrar</g:link></li>
+							</sec:ifNotLoggedIn>
+						</ul>
+					</nav>
 
-		<div id="wrapper">
-
-		<nav id="nav">
-			<ul id="navigation">
-				<li><g:link class="first" controller='venta' action='create'>Venta</g:link></li>
-				<li><a href="#">Compras &raquo;</a>
-					<ul>
-						<li><g:link controller='proveedor'>Proveedor</g:link></li>
-						<li><g:link controller='productoProveedor'>Precios Proveedor</g:link></li>
-						<li><g:link controller='entrada'>Gasto</g:link></li>
-					</ul>
-				</li>
-				<li><a href="#">Admin Ventas &raquo;</a>
-					<ul>
-						<li><g:link controller='cliente'>Cliente</g:link></li>
-						<li><g:link controller='producto'>Productos</g:link></li>
-					</ul>				
-				</li>
-				<li><a href="#">Admin General &raquo;</a>
-					<ul>
-						<li><g:link controller='pais'>Pais</g:link></li>
-						<li><g:link controller='estado'>Estado</g:link></li>
-						<li><g:link controller='municipio'>Municipio</g:link></li>
-						<li><g:link controller='colonia'>Colonia</g:link></li>
-						<li><g:link controller='usuario'>Usuario</g:link></li>
-						<li><g:link controller='rol'>Rol</g:link></li>
-						<li><g:link controller='requestmap'>Config Seguridad</g:link></li>
-						<li><g:link controller='usuarioRol'>Asig Seguridad</g:link></li>
-					</ul>				
-				</li>
-				<sec:ifLoggedIn>
-				<li><g:link class="last" controller='logout' action='auth'>Salir</g:link></li>
-				</sec:ifLoggedIn>
-				<sec:ifNotLoggedIn>
-				<li><g:link class="last" controller='login' action='auth'>Entrar</g:link></li>
-				</sec:ifNotLoggedIn>
-			</ul>
-		</nav>
-
-		</div>
+					</div>
+    			</div>
+  			</div>
+		</div>		
 		<br>
-
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">betuzo</div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
