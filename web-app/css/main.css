@@ -163,6 +163,7 @@ img {
 	overflow: hidden;
 	padding-left: 0;
 	zoom: 1;
+	height: 30px;
 }
 
 .nav li {

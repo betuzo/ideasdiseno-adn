@@ -28,7 +28,6 @@
 		margin: 0px 0 14px 0;
 		color: #412e2e;
 		font-size: 18px;
-		font-weight: bold;
 	}
 
 	#login .inner .cssform p {
@@ -45,7 +44,6 @@
 	}
 
 	#login .inner .cssform label {
-		font-weight: bold;
 		float: left;
 		text-align: right;
 		margin-left: -105px;
@@ -85,6 +83,10 @@
 </head>
 
 <body>
+	<div class="nav" role="navigation">
+		<ul>
+		</ul>
+	</div>
 <div id='login'>
 	<div class='inner'>
 		<div class='fheader'><g:message code="springSecurity.login.header"/></div>

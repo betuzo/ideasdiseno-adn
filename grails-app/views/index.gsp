@@ -75,6 +75,10 @@
 		</style>
 	</head>
 	<body>
+		<div class="nav" role="navigation">
+			<ul>
+			</ul>
+		</div>
 		
 		<div id="page-body" role="main">
 			<h1>Bienvenido a Ideas y Diseño</h1>
