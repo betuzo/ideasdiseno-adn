@@ -39,4 +39,5 @@ class Usuario extends Persona {
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
 	}
+
 }

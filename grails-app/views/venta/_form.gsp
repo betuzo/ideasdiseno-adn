@@ -1,12 +1,12 @@
 <%@ page import="mx.com.ideasydiseno.adn.Venta" %>
 
 <g:if test="${ventaInstance?.id}">
-<li class="fieldcontain">
+<div class="fieldcontain">
 	<span id="id-label" class="property-label"><g:message code="venta.id.label" default="Folio" /></span>
 	
 		<span class="property-value" aria-labelledby="id-label"><g:fieldValue bean="${ventaInstance}" field="id"/></span>
 	
-</li>
+</div>
 </g:if>
 
 <div class="fieldcontain ${hasErrors(bean: ventaInstance, field: 'cliente', 'error')} required">
@@ -22,7 +22,7 @@
 		<g:message code="venta.vendedor.label" default="Vendedor" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="vendedor" name="vendedor.id" from="${mx.com.ideasydiseno.adn.Usuario.list()}" optionKey="id" required="" value="${ventaInstance?.vendedor?.id}" class="many-to-one"/>
+	<g:select id="vendedor" name="vendedor.id" from="${ventaInstance?.usuarioLoggedIn()}" optionKey="id" required="" value="${ventaInstance?.vendedor?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: ventaInstance, field: 'fechaVenta', 'error')} required">
@@ -57,13 +57,23 @@
 	<g:select name="estado" from="${ventaInstance.constraints.estado.inList}" required="" value="${ventaInstance?.estado}" valueMessagePrefix="venta.estado"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: ventaInstance, field: 'observaciones', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: ventaInstance, field: 'observaciones', 'error')}">
 	<label for="observaciones">
 		<g:message code="venta.observaciones.label" default="Observaciones" />
+
+	</label>
+	<g:textField name="observaciones" maxlength="50" value="${ventaInstance?.observaciones}"/>
+</div>
+
+<g:if test="${!ventaInstance?.id}">
+<div class="fieldcontain">
+	<label for="pagoAnticipo">
+		<g:message code="venta.anticipo.label" default="Anticipo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="observaciones" maxlength="50" required="" value="${ventaInstance?.observaciones}"/>
+	<g:field type="number" name="anticipo" required="" value=""/>
 </div>
+</g:if>
 
 <div class="fieldcontain ${hasErrors(bean: ventaInstance, field: 'pagos', 'error')} ">
 	<label for="pagos">

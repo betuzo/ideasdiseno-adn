@@ -2,6 +2,8 @@ package mx.com.ideasydiseno.adn
 
 class Venta {
 
+    transient springSecurityService
+
 	Cliente cliente
 	Usuario vendedor
 	Date fechaVenta
@@ -20,10 +22,20 @@ class Venta {
     	fechaEntrega blank:true
     	totalVenta blank:false
     	estado blank:false, inList: ["Abierto", "Cerrado"]
-        observaciones blank:false, size:0..50
+        observaciones blank:true, size:0..50
     }
 
     String toString(){
-        return "${fechaVenta} ${totalVenta}"
+        def formattedDate = fechaVenta.format('yyyy-MM-dd')
+        return "Foio: ${id} - ${formattedDate}  ${totalVenta}"
+    }
+
+    def usuarioLoggedIn() {
+        def user = springSecurityService?.currentUser
+        if (user==null){
+            return Usuario.list()
+        }else{
+            return Usuario.findByUsername(user.username)
+        }
     }
 }

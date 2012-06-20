@@ -16,7 +16,7 @@ class VentaController {
     }
 
     def create() {
-        [ventaInstance: new Venta(params)]
+        [ventaInstance: new Venta(params), clienteInstance: new Cliente(params)]
     }
 
     def save() {
@@ -24,6 +24,16 @@ class VentaController {
         if (!ventaInstance.save(flush: true)) {
             render(view: "create", model: [ventaInstance: ventaInstance])
             return
+        }
+
+        def pagoInstance = new Pago()
+        pagoInstance.venta = ventaInstance
+        pagoInstance.concepto = 'Anticipo'
+        pagoInstance.totalPago = params.anticipo.toDouble() 
+        pagoInstance.fechaPago = new Date()
+
+        if (!pagoInstance.save(flush: true)) {
+            flash.message = message(code: 'default.paidfail.message', args: [ventaInstance.id, params.anticipo])
         }
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'venta.label', default: 'Venta'), ventaInstance.id])

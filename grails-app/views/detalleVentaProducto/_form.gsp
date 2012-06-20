@@ -7,7 +7,7 @@
 		<g:message code="detalleVentaProducto.producto.label" default="Producto" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="producto" name="producto.id" from="${mx.com.ideasydiseno.adn.Producto.list()}" optionKey="id" required="" value="${detalleVentaProductoInstance?.producto?.id}" class="many-to-one"/>
+	<g:select id="producto" name="producto.id" from="${mx.com.ideasydiseno.adn.Producto.findByEsVenta(true)}" optionKey="id" required="" value="${detalleVentaProductoInstance?.producto?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: detalleVentaProductoInstance, field: 'cantidad', 'error')} required">

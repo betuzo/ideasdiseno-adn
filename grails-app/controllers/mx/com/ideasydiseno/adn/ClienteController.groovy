@@ -2,6 +2,8 @@ package mx.com.ideasydiseno.adn
 
 import org.springframework.dao.DataIntegrityViolationException
 
+import grails.converters.*
+
 class ClienteController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -13,6 +15,38 @@ class ClienteController {
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [clienteInstanceList: Cliente.list(params), clienteInstanceTotal: Cliente.count()]
+    }
+
+    def clienteVenta() {
+        def response = [:]
+        def html = ''
+        response.exito = "1"
+        def query = Cliente.where {
+            (nombre == params.nombre && apellidoPaterno == params.apellidoPaterno 
+               && sexo== params.sexo && telefono == params.telefono)
+        }
+        def results = query.list(sort:"apellidoPaterno")
+        if (results.size() == 0)
+        {
+            def clienteInstance = new Cliente(params)
+            if (!clienteInstance.save(flush: true)) {
+                response.exito = "0"
+            }
+            response.nuevo = "1"
+            response.cliente = clienteInstance
+        }else{
+            response.nuevo = "0"
+            response.cliente = results
+        }
+
+        response.html = g.select(optionKey: 'id', 
+                        from: response.cliente, 
+                        id: 'cliente', 
+                        name: 'cliente.id', 
+                        class: 'many-to-one', 
+                        required: '', 
+                        value: response.cliente.id)
+        render response as JSON
     }
 
     def create() {
