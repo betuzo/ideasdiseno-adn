@@ -26,28 +26,28 @@
 	<g:datePicker name="fechaRegistro" precision="day"  value="${proveedorInstance?.fechaRegistro}"  />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'direccion', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'direccion', 'error')} ">
 	<label for="direccion">
 		<g:message code="proveedor.direccion.label" default="Direccion" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:textField name="direccion" required="" value="${proveedorInstance?.direccion}"/>
+	<g:textField name="direccion" value="${proveedorInstance?.direccion}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'colonia', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'colonia', 'error')} ">
 	<label for="colonia">
 		<g:message code="proveedor.colonia.label" default="Colonia" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:select id="colonia" name="colonia.id" from="${mx.com.ideasydiseno.adn.Colonia.list()}" optionKey="id" required="" value="${proveedorInstance?.colonia?.id}" class="many-to-one"/>
+	<g:select id="colonia" name="colonia.id" from="${mx.com.ideasydiseno.adn.Colonia.list()}" optionKey="id" value="${proveedorInstance?.colonia?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'codigoPostal', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'codigoPostal', 'error')} ">
 	<label for="codigoPostal">
 		<g:message code="proveedor.codigoPostal.label" default="Codigo Postal" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:textField name="codigoPostal" required="" value="${proveedorInstance?.codigoPostal}"/>
+	<g:textField name="codigoPostal" value="${proveedorInstance?.codigoPostal}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'telefono1', 'error')} ">
@@ -66,6 +66,30 @@
 	<g:textField name="telefono2" value="${proveedorInstance?.telefono2}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'paginaWeb', 'error')} ">
+	<label for="paginaWeb">
+		<g:message code="proveedor.paginaWeb.label" default="Pagina Web" />
+		
+	</label>
+	<g:textField name="paginaWeb" value="${proveedorInstance?.paginaWeb}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'email1', 'error')} ">
+	<label for="email1">
+		<g:message code="proveedor.email1.label" default="Email1" />
+		
+	</label>
+	<g:textField name="email1" value="${proveedorInstance?.email1}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'email2', 'error')} ">
+	<label for="email2">
+		<g:message code="proveedor.email2.label" default="Email2" />
+		
+	</label>
+	<g:textField name="email2" value="${proveedorInstance?.email2}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'contactos', 'error')} ">
 	<label for="contactos">
 		<g:message code="proveedor.contactos.label" default="Contactos" />
@@ -81,14 +105,6 @@
 </li>
 </ul>
 
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'paginaWeb', 'error')} ">
-	<label for="paginaWeb">
-		<g:message code="proveedor.paginaWeb.label" default="Pagina Web" />
-		
-	</label>
-	<g:textField name="paginaWeb" value="${proveedorInstance?.paginaWeb}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: proveedorInstance, field: 'productos', 'error')} ">

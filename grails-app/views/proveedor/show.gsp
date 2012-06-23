@@ -95,6 +95,33 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${proveedorInstance?.paginaWeb}">
+				<li class="fieldcontain">
+					<span id="paginaWeb-label" class="property-label"><g:message code="proveedor.paginaWeb.label" default="Pagina Web" /></span>
+					
+						<span class="property-value" aria-labelledby="paginaWeb-label"><g:fieldValue bean="${proveedorInstance}" field="paginaWeb"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${proveedorInstance?.email1}">
+				<li class="fieldcontain">
+					<span id="email1-label" class="property-label"><g:message code="proveedor.email1.label" default="Email1" /></span>
+					
+						<span class="property-value" aria-labelledby="email1-label"><g:fieldValue bean="${proveedorInstance}" field="email1"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${proveedorInstance?.email2}">
+				<li class="fieldcontain">
+					<span id="email2-label" class="property-label"><g:message code="proveedor.email2.label" default="Email2" /></span>
+					
+						<span class="property-value" aria-labelledby="email2-label"><g:fieldValue bean="${proveedorInstance}" field="email2"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${proveedorInstance?.contactos}">
 				<li class="fieldcontain">
 					<span id="contactos-label" class="property-label"><g:message code="proveedor.contactos.label" default="Contactos" /></span>
@@ -102,15 +129,6 @@
 						<g:each in="${proveedorInstance.contactos}" var="c">
 						<span class="property-value" aria-labelledby="contactos-label"><g:link controller="contactoProveedor" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
 						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${proveedorInstance?.paginaWeb}">
-				<li class="fieldcontain">
-					<span id="paginaWeb-label" class="property-label"><g:message code="proveedor.paginaWeb.label" default="Pagina Web" /></span>
-					
-						<span class="property-value" aria-labelledby="paginaWeb-label"><g:fieldValue bean="${proveedorInstance}" field="paginaWeb"/></span>
 					
 				</li>
 				</g:if>
